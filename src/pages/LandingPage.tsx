@@ -1,5 +1,7 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import SkillsSection from '../components/SkillsSection';
+import { COLORS } from '../constants/colors';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const LandingPage: React.FC = () => {
@@ -65,124 +67,13 @@ const LandingPage: React.FC = () => {
             </div>
             
 
-            <div style={{ textAlign: 'center', margin: '20px 0', backgroundColor: '#FFFFFF', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
-                <section>
-                    <h2 style={{ color: '#34495E' }}>Skills</h2>
-                    <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '15px', justifyContent: 'center' }}>
-                        <div className="row" style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
-                            <div className="square" style={{ backgroundColor: '#EAF6FF', padding: '20px', borderRadius: '5px', width: '300px', textAlign: 'center', transition: 'transform 0.3s, box-shadow 0.3s' }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1.05)';
-                                    e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1)';
-                                    e.currentTarget.style.boxShadow = 'none';
-                                }}>
-                                <h5>Programming Languages</h5>
-                                <ul style={{ listStyleType: 'none', padding: 0, color: '#2C3E50' }}>
-                                    <li><i className="bi bi-code-slash"></i> Python</li>
-                                    <li><i className="bi bi-code"></i> Scala</li>
-                                    <li><i className="bi bi-code"></i> C#</li>
-                                    <li><i className="bi bi-code"></i> Java</li>
-                                    <li><i className="bi bi-bar-chart"></i> R</li>
-                                    <li><i className="bi bi-code"></i> JavaScript</li>
-                                    <li><i className="bi bi-code"></i> TypeScript</li>
-                                </ul>
-                            </div>
-                            <div className="square" style={{ backgroundColor: '#EAF6FF', padding: '20px', borderRadius: '5px', width: '300px', textAlign: 'center', transition: 'transform 0.3s, box-shadow 0.3s' }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1.05)';
-                                    e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1)';
-                                    e.currentTarget.style.boxShadow = 'none';
-                                }}>
-                                <h5>Data Engineering</h5>
-                                <ul style={{ listStyleType: 'none', padding: 0, color: '#2C3E50' }}>
-                                    <li><i className="bi bi-lightning"></i> Pyspark</li>
-                                    <li><i className="bi bi-database"></i> SQL/NoSQL</li>
-                                    <li><i className="bi bi-gear"></i> Airflow</li>
-                                </ul>
-                            </div>
-                            <div className="square" style={{ backgroundColor: '#EAF6FF', padding: '20px', borderRadius: '5px', width: '300px', textAlign: 'center', transition: 'transform 0.3s, box-shadow 0.3s' }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1.05)';
-                                    e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1)';
-                                    e.currentTarget.style.boxShadow = 'none';
-                                }}>
-                                <h5>Azure & Cloud</h5>
-                                <ul style={{ listStyleType: 'none', padding: 0, color: '#2C3E50' }}>
-                                    <li><i className="bi bi-cloud"></i> Azure</li>
-                                    <li><i className="bi bi-bar-chart"></i> Azure Synapse Analytics</li>
-                                    <li><i className="bi bi-lightning"></i> Azure Databricks</li>
-                                    <li><i className="bi bi-tools"></i> Azure DevOps</li>
-                                    <li><i className="bi bi-cloud"></i> Azure Cloud Functions</li>
-                                    <li><i className="bi bi-cloud"></i> Azure Logic Apps</li>
-                                    <li><i className="bi bi-cloud"></i> Microsoft Fabric</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="row" style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
-                            <div className="square" style={{ backgroundColor: '#EAF6FF', padding: '20px', borderRadius: '5px', width: '300px', textAlign: 'center', transition: 'transform 0.3s, box-shadow 0.3s' }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1.05)';
-                                    e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1)';
-                                    e.currentTarget.style.boxShadow = 'none';
-                                }}>
-                                <h5>Visualization & BI</h5>
-                                <ul style={{ listStyleType: 'none', padding: 0, color: '#2C3E50' }}>
-                                    <li><i className="bi bi-pie-chart"></i> Power BI</li>
-                                    <li><i className="bi bi-bar-chart"></i> DAX</li>
-                                    <li><i className="bi bi-bar-chart"></i> Semantic Models</li>
-                                    <li><i className="bi bi-bar-chart"></i> Statistics</li>
-                                    <li><i className="bi bi-bar-chart"></i> Forecasting</li>
-                                </ul>
-                            </div>
-                            <div className="square" style={{ backgroundColor: '#EAF6FF', padding: '20px', borderRadius: '5px', width: '300px', textAlign: 'center', transition: 'transform 0.3s, box-shadow 0.3s' }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1.05)';
-                                    e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1)';
-                                    e.currentTarget.style.boxShadow = 'none';
-                                }}>
-                                <h5>Development & Tools</h5>
-                                <ul style={{ listStyleType: 'none', padding: 0, color: '#2C3E50' }}>
-                                    <li><i className="bi bi-code"></i> ASP.NET</li>
-                                    <li><i className="bi bi-laptop"></i> Fullstack development</li>
-                                    <li><i className="bi bi-code-slash"></i> React</li>
-                                    <li><i className="bi bi-box"></i> Docker</li>
-                                    <li><i className="bi bi-git"></i> Git</li>
-                                </ul>
-                            </div>
-                            <div className="square" style={{ backgroundColor: '#EAF6FF', padding: '20px', borderRadius: '5px', width: '300px', textAlign: 'center', transition: 'transform 0.3s, box-shadow 0.3s' }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1.05)';
-                                    e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'scale(1)';
-                                    e.currentTarget.style.boxShadow = 'none';
-                                }}>
-                                <h5>Other Skills</h5>
-                                <ul style={{ listStyleType: 'none', padding: 0, color: '#2C3E50' }}>
-                                    <li><i className="bi bi-lightning"></i> Machine Learning</li>
-                                    <li><i className="bi bi-diagram-3"></i> Model Context Protocol</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
+            <SkillsSection 
+                title="Skills"
+                subtitle="Technologies and tools I specialize in"
+                showTitle={true}
+                backgroundColor={COLORS.backgroundWhite}
+                className="my-4"
+            />
         </div>
     );
 };
