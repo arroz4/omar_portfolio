@@ -22,19 +22,16 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">Landing Page</Link>
+                  <Link className="nav-link" to="/projects" style={{ fontSize: '1.1rem' }}>Projects</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/projects">Projects</Link>
+                  <Link className="nav-link" to="/about" style={{ fontSize: '1.1rem' }}>About Me</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/about">About Me</Link>
+                  <Link className="nav-link" to="/gallery" style={{ fontSize: '1.1rem' }}>Gallery</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/gallery">Gallery</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/resume">Resume</Link>
+                  <Link className="nav-link" to="/resume" style={{ fontSize: '1.1rem' }}>Resume</Link>
                 </li>
               </ul>
             </div>
