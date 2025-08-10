@@ -1,6 +1,15 @@
 import React from 'react';
 
 const Resume: React.FC = () => {
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = `${process.env.PUBLIC_URL}/files/OmarBarrera_CV2025.pdf`;
+        link.download = 'OmarBarrera_CV2025.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <div style={{ padding: '40px', fontFamily: 'Arial, sans-serif', lineHeight: '1.6', color: '#2C3E50' }}>
             <h1 style={{ textAlign: 'center', color: '#4A90E2', marginBottom: '30px' }}>Resume</h1>
@@ -151,9 +160,8 @@ const Resume: React.FC = () => {
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '40px' }}>
-                <a 
-                    href="/files/OmarBarrera_CV2025.pdf" 
-                    download 
+                <button 
+                    onClick={handleDownload}
                     style={{ 
                         display: 'inline-block', 
                         padding: '10px 20px', 
@@ -163,13 +171,15 @@ const Resume: React.FC = () => {
                         borderRadius: '5px', 
                         fontSize: '16px', 
                         fontWeight: 'bold', 
-                        transition: 'background-color 0.3s' 
+                        transition: 'background-color 0.3s',
+                        border: 'none',
+                        cursor: 'pointer'
                     }}
                     onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#357ABD'}
                     onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#4A90E2'}
                 >
                     Download My CV
-                </a>
+                </button>
             </div>
         </div>
     );

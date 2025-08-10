@@ -3,6 +3,13 @@ import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const LandingPage: React.FC = () => {
+    const omarImages = [
+        'omar/omar_best.jpg',
+        'omar/omar_cowboy.jpg',
+        'omar/omar_cowboy2.jpg',
+        'omar/omar_parade.jpg',
+    ].map((img) => `${process.env.PUBLIC_URL}/images/${img}`);
+
     return (
         <div>
             <div style={{ textAlign: 'center', margin: '20px 0', backgroundColor: '#F5F7FA', padding: '20px', borderRadius: '10px' }}>
@@ -12,7 +19,7 @@ const LandingPage: React.FC = () => {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src="/images/omar/omar_best.jpg"
+                                src={omarImages[0]}
                                 alt="First slide"
                                 style={{ height: '400px', objectFit: 'cover' }}
                             />
@@ -20,7 +27,7 @@ const LandingPage: React.FC = () => {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src="/images/omar/omar_cowboy.jpg"
+                                src={omarImages[1]}
                                 alt="Second slide"
                                 style={{ height: '400px', objectFit: 'cover' }}
                             />
@@ -28,7 +35,7 @@ const LandingPage: React.FC = () => {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src="/images/omar/omar_cowboy2.jpg"
+                                src={omarImages[2]}
                                 alt="Third slide"
                                 style={{ height: '400px', objectFit: 'cover' }}
                             />
@@ -36,7 +43,7 @@ const LandingPage: React.FC = () => {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100"
-                                src="/images/omar/omar_parade.jpg"
+                                src={omarImages[3]}
                                 alt="Fourth slide"
                                 style={{ height: '400px', objectFit: 'cover' }}
                             />
