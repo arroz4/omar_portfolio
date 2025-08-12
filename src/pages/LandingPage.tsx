@@ -23,7 +23,6 @@ const LandingPage: React.FC = () => {
         'omar/omar_best.jpg',
         'omar/omar_cowboy2.jpg',
         'omar/omar_parade.jpg',
-        'omar/_MG_1203.jpg',
         'omar/1000053095.jpg',
         'omar/1000062801.jpg',
         'omar/1000063044.jpg',
