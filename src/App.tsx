@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { COLORS, TYPOGRAPHY } from './constants';
 import LandingPage from './pages/LandingPage';
 import Projects from './pages/Projects';
@@ -11,6 +12,7 @@ import Resume from './pages/Resume';
 const Navigation: React.FC = () => {
   const location = useLocation();
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +22,14 @@ const Navigation: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   const navStyle: React.CSSProperties = {
     background: 'rgba(255, 255, 255, 0.95)',
@@ -105,51 +115,66 @@ const Navigation: React.FC = () => {
           <button
             className="d-lg-none btn"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mobileNav"
+            onClick={toggleMobileMenu}
             style={{
               border: 'none',
               background: 'none',
-              color: isScrolled ? COLORS.textPrimary : COLORS.textWhite,
-              fontSize: '1.5rem'
+              color: COLORS.textPrimary,
+              fontSize: '1.5rem',
+              padding: '0.5rem',
+              borderRadius: '8px'
             }}
+            aria-label="Toggle mobile menu"
           >
-            <i className="bi bi-list" />
+            <i className={`bi ${isMobileMenuOpen ? 'bi-x' : 'bi-list'}`} />
           </button>
         </div>
 
         {/* Mobile navigation */}
-        <div className="collapse d-lg-none mt-3" id="mobileNav">
-          <div 
-            style={{
-              background: isScrolled ? COLORS.backgroundWhite : 'rgba(255, 255, 255, 0.95)',
-              borderRadius: '12px',
-              padding: '1rem',
-              backdropFilter: 'blur(20px)',
-            }}
-          >
-            {navItems.map((item) => {
-              const isActive = location.pathname === item.path;
-              return (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className="d-block"
-                  style={{
-                    ...navLinkStyle(isActive),
-                    color: isActive ? COLORS.primary : COLORS.textPrimary,
-                    display: 'block',
-                    marginBottom: '0.5rem'
-                  }}
-                  data-bs-toggle="collapse"
-                  data-bs-target="#mobileNav"
-                >
-                  <i className={`${item.icon} me-2`} />
-                  {item.label}
-                </Link>
-              );
-            })}
-          </div>
+        <div 
+          className={`d-lg-none mt-3 ${isMobileMenuOpen ? 'd-block' : 'd-none'}`}
+          style={{
+            background: 'rgba(255, 255, 255, 0.98)',
+            borderRadius: '12px',
+            padding: '1rem',
+            backdropFilter: 'blur(20px)',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            border: '1px solid rgba(255, 255, 255, 0.2)'
+          }}
+        >
+          {navItems.map((item) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="d-block"
+                onClick={closeMobileMenu}
+                style={{
+                  ...navLinkStyle(isActive),
+                  color: isActive ? COLORS.primary : COLORS.textPrimary,
+                  display: 'block',
+                  marginBottom: '0.5rem',
+                  padding: '0.75rem 1rem',
+                  backgroundColor: isActive ? 'rgba(102, 126, 234, 0.1)' : 'transparent',
+                  fontSize: '1.1rem'
+                }}
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.backgroundColor = 'rgba(102, 126, 234, 0.05)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }
+                }}
+              >
+                <i className={`${item.icon} me-3`} style={{ width: '20px' }} />
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </nav>

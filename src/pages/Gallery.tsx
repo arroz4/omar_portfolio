@@ -219,7 +219,11 @@ const Gallery: React.FC = () => {
                         {filteredItems.map((item, index) => (
                             <div className="col-lg-4 col-md-6" key={index}>
                                 <div 
-                                    style={imageCardStyle}
+                                    className="fade-in-up"
+                                    style={{
+                                        ...imageCardStyle,
+                                        animationDelay: `${index * 0.1}s`
+                                    }}
                                     onClick={() => setSelectedImage(item.src)}
                                     onMouseEnter={(e) => {
                                         e.currentTarget.style.transform = 'translateY(-8px)';

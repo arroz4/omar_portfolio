@@ -132,7 +132,7 @@ const Resume: React.FC = () => {
                             </div>
                         </div>
                         <div className="col-lg-4">
-                            <div className="slide-in-right" style={{ animationDelay: '0.3s' }}>
+                            <div className="fade-in-up" style={{ animationDelay: '0.3s', opacity: 0, animationFillMode: 'forwards' }}>
                                 <button 
                                     onClick={handleDownload}
                                     style={{

@@ -16,17 +16,29 @@ const AboutMe: React.FC = () => {
     const aboutSections = [
         {
             title: "Who I Am",
-            content: "I'm a passionate data engineer with over 5 years of experience transforming complex data challenges into scalable, efficient solutions. Currently working at Microsoft in Mexico City, I specialize in Azure cloud technologies and have a proven track record of building systems that process millions of records daily while maintaining 99.9% uptime.",
+            content: [
+                "Passionate data engineer with 5+ years of experience transforming complex data challenges into scalable solutions",
+                "Currently working at Microsoft in Mexico City, specializing in Azure cloud technologies",
+                "Proven track record of building systems that process millions of records daily with 99.9% uptime"
+            ],
             icon: "bi-person-circle"
         },
         {
             title: "What I Do",
-            content: "I architect and implement end-to-end data pipelines, design robust ETL processes, and create insightful analytics solutions. My expertise spans from data warehousing and real-time processing to machine learning deployment and business intelligence. I'm particularly passionate about leveraging Azure's ecosystem to build scalable, cost-effective data solutions.",
+            content: [
+                "Architect and implement end-to-end data pipelines and robust ETL processes",
+                "Create insightful analytics solutions spanning data warehousing to machine learning deployment",
+                "Leverage Azure's ecosystem to build scalable, cost-effective data solutions"
+            ],
             icon: "bi-gear-wide-connected"
         },
         {
             title: "My Approach",
-            content: "I believe in building data solutions that are not just technically sound, but also business-driven and user-focused. Every pipeline I design considers scalability, maintainability, and performance. I'm committed to continuous learning and staying current with emerging technologies in the rapidly evolving data landscape.",
+            content: [
+                "Build data solutions that are technically sound, business-driven, and user-focused",
+                "Design every pipeline considering scalability, maintainability, and performance",
+                "Committed to continuous learning and staying current with emerging technologies"
+            ],
             icon: "bi-lightbulb"
         }
     ];
@@ -77,37 +89,6 @@ const AboutMe: React.FC = () => {
         }
     ];
 
-    const timeline = [
-        {
-            year: "2022 - Present",
-            title: "Software Engineer",
-            company: "Microsoft",
-            location: "Mexico City, Mexico",
-            description: "Leading data engineering initiatives in the Finance Insights department, developing tools that serve 30k+ users with actionable business insights."
-        },
-        {
-            year: "2021 - 2022",
-            title: "Data Engineer",
-            company: "Wyde Corporation / Hewlett Packard",
-            location: "Guadalajara, Mexico",
-            description: "Built high-availability ETL pipelines for sales teams, implemented system automation, and created financial analysis dashboards."
-        },
-        {
-            year: "2020 - 2021",
-            title: "BI Analyst",
-            company: "G-Global",
-            location: "San Diego/Tijuana",
-            description: "Managed KPI dashboard portfolio, developed warehouse inventory systems, and conducted statistical analysis for import/export optimization."
-        },
-        {
-            year: "2019",
-            title: "Industrial Engineering Graduate",
-            company: "Universidad La Salle Noroeste",
-            location: "Mexico",
-            description: "Graduated with a degree in Industrial Engineering, building a strong foundation in process optimization and analytical thinking."
-        }
-    ];
-
     return (
         <div style={{ 
             minHeight: '100vh',
@@ -133,9 +114,9 @@ const AboutMe: React.FC = () => {
                 }} />
                 
                 <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-lg-8">
-                            <div className="fade-in-up">
+                    <div className="row align-items-center g-4">
+                        <div className="col-lg-7">
+                            <div className="fade-in-up" style={{ textAlign: 'right', paddingRight: '4rem' }}>
                                 <h1 style={{
                                     fontSize: TYPOGRAPHY.sizes['5xl'],
                                     fontWeight: TYPOGRAPHY.fontWeights.bold,
@@ -147,24 +128,25 @@ const AboutMe: React.FC = () => {
                                 <p style={{
                                     fontSize: TYPOGRAPHY.sizes.xl,
                                     color: 'rgba(255, 255, 255, 0.9)',
-                                    maxWidth: '600px',
-                                    lineHeight: '1.6'
+                                    maxWidth: '500px',
+                                    lineHeight: '1.6',
+                                    marginLeft: 'auto'
                                 }}>
                                     Passionate about transforming data into actionable insights and building 
                                     scalable solutions that drive business success.
                                 </p>
                             </div>
                         </div>
-                        <div className="col-lg-4">
-                            <div className="slide-in-right" style={{ animationDelay: '0.3s' }}>
+                        <div className="col-lg-5">
+                            <div className="fade-in-up" style={{ animationDelay: '0.3s', paddingLeft: '2rem', opacity: 0, animationFillMode: 'forwards' }}>
                                 <div style={{
-                                    width: '300px',
-                                    height: '300px',
+                                    width: '280px',
+                                    height: '280px',
                                     borderRadius: '50%',
                                     overflow: 'hidden',
                                     border: `6px solid ${COLORS.backgroundWhite}`,
                                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-                                    margin: '0 auto'
+                                    margin: '0 0 0 0'
                                 }}>
                                     <img 
                                         src={personalInfo.profileImage}
@@ -272,12 +254,33 @@ const AboutMe: React.FC = () => {
                                         {section.title}
                                     </h3>
                                     
-                                    <p style={{
+                                    <ul style={{
                                         color: COLORS.textSecondary,
-                                        lineHeight: '1.6'
+                                        lineHeight: '1.7',
+                                        textAlign: 'left',
+                                        paddingLeft: '1.5rem',
+                                        margin: 0,
+                                        listStyleType: 'none'
                                     }}>
-                                        {section.content}
-                                    </p>
+                                        {section.content.map((point, idx) => (
+                                            <li key={idx} style={{
+                                                marginBottom: '0.75rem',
+                                                position: 'relative'
+                                            }}>
+                                                <span style={{
+                                                    position: 'absolute',
+                                                    left: '-1.5rem',
+                                                    top: '0.1rem',
+                                                    color: COLORS.primary,
+                                                    fontWeight: 'bold',
+                                                    fontSize: '1.2rem'
+                                                }}>
+                                                    •
+                                                </span>
+                                                {point}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
                             </div>
                         ))}
@@ -358,109 +361,8 @@ const AboutMe: React.FC = () => {
                 </div>
             </section>
 
-            {/* Career Timeline */}
-            <section style={{ padding: '5rem 0', backgroundColor: COLORS.backgroundWhite }}>
-                <div className="container">
-                    <div className="text-center mb-5">
-                        <h2 style={{
-                            fontSize: TYPOGRAPHY.sizes['3xl'],
-                            fontWeight: TYPOGRAPHY.fontWeights.bold,
-                            color: COLORS.textPrimary,
-                            marginBottom: '1rem'
-                        }}>
-                            Career Journey
-                        </h2>
-                        <p style={{
-                            fontSize: TYPOGRAPHY.sizes.lg,
-                            color: COLORS.textSecondary,
-                            maxWidth: '600px',
-                            margin: '0 auto'
-                        }}>
-                            My professional path in data engineering and technology
-                        </p>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-lg-8 mx-auto">
-                            {timeline.map((item, index) => (
-                                <div 
-                                    key={index} 
-                                    className="d-flex mb-4 fade-in-up"
-                                    style={{ animationDelay: `${index * 0.2}s` }}
-                                >
-                                    <div style={{
-                                        width: '60px',
-                                        height: '60px',
-                                        background: COLORS.gradientPrimary,
-                                        borderRadius: '50%',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        marginRight: '1.5rem',
-                                        flexShrink: 0
-                                    }}>
-                                        <i className="bi bi-briefcase" style={{
-                                            fontSize: '1.2rem',
-                                            color: COLORS.textWhite
-                                        }} />
-                                    </div>
-                                    
-                                    <div 
-                                        className="card"
-                                        style={{
-                                            ...COMMON_STYLES.card,
-                                            flex: 1,
-                                            border: `1px solid ${COLORS.border}`
-                                        }}
-                                    >
-                                        <div className="d-flex justify-content-between align-items-start mb-2">
-                                            <h4 style={{
-                                                fontSize: TYPOGRAPHY.sizes.lg,
-                                                fontWeight: TYPOGRAPHY.fontWeights.bold,
-                                                color: COLORS.textPrimary,
-                                                margin: 0
-                                            }}>
-                                                {item.title}
-                                            </h4>
-                                            <span style={{
-                                                backgroundColor: COLORS.primary,
-                                                color: COLORS.textWhite,
-                                                padding: '0.25rem 0.75rem',
-                                                borderRadius: '20px',
-                                                fontSize: TYPOGRAPHY.sizes.sm,
-                                                fontWeight: TYPOGRAPHY.fontWeights.medium
-                                            }}>
-                                                {item.year}
-                                            </span>
-                                        </div>
-                                        
-                                        <h5 style={{
-                                            fontSize: TYPOGRAPHY.sizes.base,
-                                            fontWeight: TYPOGRAPHY.fontWeights.semibold,
-                                            color: COLORS.secondary,
-                                            margin: '0.5rem 0'
-                                        }}>
-                                            {item.company} • {item.location}
-                                        </h5>
-                                        
-                                        <p style={{
-                                            color: COLORS.textSecondary,
-                                            fontSize: TYPOGRAPHY.sizes.sm,
-                                            lineHeight: '1.5',
-                                            margin: 0
-                                        }}>
-                                            {item.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* Interests & Hobbies */}
-            <section style={{ padding: '5rem 0' }}>
+            <section style={{ padding: '5rem 0', backgroundColor: COLORS.backgroundWhite }}>
                 <div className="container">
                     <div className="text-center mb-5">
                         <h2 style={{
@@ -535,7 +437,7 @@ const AboutMe: React.FC = () => {
             </section>
 
             {/* Contact CTA */}
-            <section style={{ padding: '5rem 0', backgroundColor: COLORS.backgroundWhite }}>
+            <section style={{ padding: '5rem 0' }}>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 mx-auto">

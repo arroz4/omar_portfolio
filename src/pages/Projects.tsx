@@ -16,79 +16,80 @@ interface Project {
 }
 
 const Projects: React.FC = () => {
-    // Template projects - replace with your actual projects
+    // Real GitHub projects from https://github.com/arroz4 - Updated with actual repositories
     const projects: Project[] = React.useMemo(() => [
         {
             id: 1,
-            title: "Azure Data Pipeline Architecture",
-            description: "Scalable ETL pipeline processing 10M+ records daily using Azure Data Factory and Synapse Analytics",
-            longDescription: "Designed and implemented a comprehensive data pipeline architecture that processes over 10 million records daily. The solution includes automated data ingestion from multiple sources, real-time data transformation using Azure Data Factory, and advanced analytics capabilities through Azure Synapse Analytics. Implemented monitoring and alerting systems for 99.9% uptime.",
-            technologies: ["Azure Data Factory", "Azure Synapse", "Python", "SQL", "PowerBI"],
-            githubUrl: "https://github.com/yourusername/azure-pipeline",
-            imageUrl: `${process.env.PUBLIC_URL}/images/projects/project1.jpg`,
+            title: "Azure DevOps MCP Server",
+            description: "Model Context Protocol server for Azure DevOps work item management with comprehensive REST API integration",
+            longDescription: "A comprehensive MCP server that provides seamless integration with Azure DevOps work items. Features include creating, updating, retrieving work items, managing work item relationships, and querying using WIQL. Built with modular architecture using Python and FastMCP, deployed as containerized solution with Azure Container Apps for enterprise scalability.",
+            technologies: ["Python", "FastMCP", "Azure DevOps API", "Docker", "Azure Container Apps"],
+            githubUrl: "https://github.com/arroz4/azure-devops-mcp-server",
+            imageUrl: `${process.env.PUBLIC_URL}/images/projects/azure-devops-mcp.jpg`,
             category: "Data Engineering",
             featured: true,
             status: "Completed"
         },
         {
             id: 2,
-            title: "Real-time Analytics Dashboard",
-            description: "Interactive Power BI dashboard providing real-time insights for business stakeholders",
-            longDescription: "Built a comprehensive real-time analytics dashboard using Power BI that provides actionable insights to business stakeholders. The dashboard connects to multiple data sources including SQL databases, APIs, and cloud storage, featuring automated data refresh and interactive visualizations that help drive strategic decisions.",
-            technologies: ["Power BI", "DAX", "Azure SQL", "Python", "REST APIs"],
-            liveUrl: "https://app.powerbi.com/your-dashboard",
-            imageUrl: `${process.env.PUBLIC_URL}/images/projects/project2.jpg`,
-            category: "Analytics",
+            title: "ADO Instruction MCP Server",
+            description: "Advanced Azure OpenAI image processing server with dependency arrow detection and analysis",
+            longDescription: "Sophisticated MCP server that processes images using Azure OpenAI's vision capabilities to detect and analyze dependency arrows in diagrams. Features automatic arrow detection, relationship mapping, and structured output generation. Deployed on Azure with enterprise-grade security and monitoring.",
+            technologies: ["Python", "Azure OpenAI", "Computer Vision", "FastMCP", "Azure Container Apps"],
+            githubUrl: "https://github.com/arroz4/ado-instruction-mcp-server",
+            imageUrl: `${process.env.PUBLIC_URL}/images/projects/ado-instruction-mcp.jpg`,
+            category: "Machine Learning",
             featured: true,
             status: "Completed"
         },
         {
             id: 3,
-            title: "Machine Learning Model Deployment",
-            description: "MLOps pipeline for automated model training, validation, and deployment on Azure ML",
-            longDescription: "Developed an end-to-end MLOps pipeline using Azure Machine Learning that automates the entire machine learning lifecycle. The pipeline includes automated data preprocessing, model training with hyperparameter tuning, model validation, and deployment to production endpoints with monitoring and retraining capabilities.",
-            technologies: ["Azure ML", "Python", "MLflow", "Docker", "Azure DevOps"],
-            githubUrl: "https://github.com/yourusername/ml-pipeline",
-            imageUrl: `${process.env.PUBLIC_URL}/images/projects/project3.jpg`,
-            category: "Machine Learning",
-            featured: false,
-            status: "In Progress"
+            title: "Full-Stack Movie Website",
+            description: "Complete web application with React frontend and C# API backend for movie discovery and management",
+            longDescription: "A full-stack web application featuring a modern React frontend with responsive design and a robust C# Web API backend. Includes user authentication, movie search and filtering, detailed movie information display, and user review system. Demonstrates proficiency in both frontend and backend development with clean architecture patterns.",
+            technologies: ["React", "C#", "Web API", "Entity Framework", "SQL Server", "Bootstrap"],
+            githubUrl: "https://github.com/arroz4/MovieWebsite",
+            imageUrl: `${process.env.PUBLIC_URL}/images/projects/movie-website.jpg`,
+            category: "Web Development",
+            featured: true,
+            status: "Completed"
         },
         {
             id: 4,
-            title: "Data Quality Framework",
-            description: "Automated data quality monitoring and validation framework for enterprise data systems",
-            longDescription: "Created a comprehensive data quality framework that automatically monitors and validates data across enterprise systems. The framework includes configurable data quality rules, anomaly detection, automated reporting, and integration with existing data pipelines to ensure data integrity and reliability.",
-            technologies: ["Python", "Apache Airflow", "PostgreSQL", "Docker", "Grafana"],
-            githubUrl: "https://github.com/yourusername/data-quality",
-            imageUrl: `${process.env.PUBLIC_URL}/images/projects/project4.jpg`,
+            title: "AI Sticky Notes MCP Server",
+            description: "FastMCP-powered note management system with AI integration and enterprise deployment capabilities",
+            longDescription: "An AI-powered sticky notes server built with FastMCP that provides note management capabilities through MCP tools and resources. Features include adding, reading, and summarizing notes with AI integration. Includes comprehensive enterprise deployment guide and Docker containerization for Azure deployment.",
+            technologies: ["Python", "FastMCP", "Docker", "Azure Container Apps", "AI Integration"],
+            githubUrl: "https://github.com/arroz4/NotesMCP",
+            imageUrl: `${process.env.PUBLIC_URL}/images/projects/notes-mcp.jpg`,
             category: "Data Engineering",
             featured: false,
             status: "Completed"
         },
         {
             id: 5,
+            title: "Logistic Regression Analysis",
+            description: "Comprehensive machine learning project analyzing advertising data with 93% accuracy prediction model",
+            longDescription: "Complete machine learning project using logistic regression to predict ad click-through rates. Features extensive exploratory data analysis, data visualization with Seaborn and Matplotlib, feature engineering, and model evaluation. Achieved 93% accuracy with detailed classification reports and confusion matrix analysis. Includes correlation analysis and joint plots for data insights.",
+            technologies: ["Python", "Scikit-learn", "Pandas", "Seaborn", "Matplotlib", "Jupyter"],
+            githubUrl: "https://github.com/arroz4/Logistic-Regression-Project",
+            imageUrl: `${process.env.PUBLIC_URL}/images/projects/logistic-regression.jpg`,
+            category: "Machine Learning",
+            featured: false,
+            status: "Completed"
+        },
+        {
+            id: 6,
             title: "Interactive Portfolio Website",
-            description: "Modern, responsive portfolio website built with React and TypeScript",
-            longDescription: "Designed and developed this modern, responsive portfolio website using React and TypeScript. Features include dynamic content loading, interactive animations, optimized performance, and a modern design system. The site is deployed on GitHub Pages with automated CI/CD pipelines.",
-            technologies: ["React", "TypeScript", "Bootstrap", "GitHub Pages"],
+            description: "Modern, responsive portfolio website built with React and TypeScript showcasing professional projects",
+            longDescription: "This modern, responsive portfolio website built with React 19 and TypeScript. Features include dynamic project filtering, interactive animations, comprehensive project showcase, and professional design system. Deployed with GitHub Pages and automated CI/CD pipelines for seamless updates and maintenance.",
+            technologies: ["React", "TypeScript", "Bootstrap", "GitHub Pages", "CI/CD"],
             githubUrl: "https://github.com/arroz4/omar_portfolio",
             liveUrl: "https://arroz4.github.io/omar_portfolio/",
             imageUrl: `${process.env.PUBLIC_URL}/images/projects/portfolio.jpg`,
             category: "Web Development",
             featured: true,
             status: "Completed"
-        },
-        {
-            id: 6,
-            title: "Cloud Cost Optimization Tool",
-            description: "Azure cost analysis and optimization recommendations engine",
-            longDescription: "Built an intelligent cost optimization tool that analyzes Azure resource usage patterns and provides actionable recommendations for cost reduction. The tool includes automated scanning, cost forecasting, resource right-sizing suggestions, and integration with Azure Cost Management APIs.",
-            technologies: ["Python", "Azure APIs", "Flask", "React", "Chart.js"],
-            imageUrl: `${process.env.PUBLIC_URL}/images/projects/project6.jpg`,
-            category: "Analytics",
-            featured: false,
-            status: "Planning"
         }
     ], []);
 
@@ -104,19 +105,6 @@ const Projects: React.FC = () => {
         }
     }, [selectedCategory, projects]);
 
-    const featuredProjects = React.useMemo(() => 
-        projects.filter(project => project.featured), [projects]
-    );
-
-    const getStatusColor = (status: Project['status']) => {
-        switch (status) {
-            case 'Completed': return COLORS.success;
-            case 'In Progress': return COLORS.warning;
-            case 'Planning': return COLORS.info;
-            default: return COLORS.textSecondary;
-        }
-    };
-
     const getCategoryColor = (category: Project['category']) => {
         switch (category) {
             case 'Data Engineering': return COLORS.primary;
@@ -124,6 +112,16 @@ const Projects: React.FC = () => {
             case 'Machine Learning': return COLORS.accent;
             case 'Analytics': return COLORS.info;
             default: return COLORS.textSecondary;
+        }
+    };
+
+    const getCategoryIcon = (category: Project['category']) => {
+        switch (category) {
+            case 'Data Engineering': return 'bi-database-gear';
+            case 'Web Development': return 'bi-laptop';
+            case 'Machine Learning': return 'bi-robot';
+            case 'Analytics': return 'bi-graph-up-arrow';
+            default: return 'bi-code-square';
         }
     };
 
@@ -170,160 +168,6 @@ const Projects: React.FC = () => {
                             A showcase of my work in data engineering, analytics, and software development. 
                             Each project represents a unique challenge and innovative solution.
                         </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* Featured Projects */}
-            <section style={{ padding: '5rem 0' }}>
-                <div className="container">
-                    <div className="text-center mb-5">
-                        <h2 style={{
-                            fontSize: TYPOGRAPHY.sizes['3xl'],
-                            fontWeight: TYPOGRAPHY.fontWeights.bold,
-                            color: COLORS.textPrimary,
-                            marginBottom: '1rem'
-                        }}>
-                            Featured Projects
-                        </h2>
-                        <p style={{
-                            fontSize: TYPOGRAPHY.sizes.lg,
-                            color: COLORS.textSecondary,
-                            maxWidth: '600px',
-                            margin: '0 auto'
-                        }}>
-                            Highlighting some of my most impactful and innovative work
-                        </p>
-                    </div>
-
-                    <div className="row g-4">
-                        {featuredProjects.map((project, index) => (
-                            <div key={project.id} className="col-lg-6">
-                                <div 
-                                    className="card card-hover fade-in-up"
-                                    style={{
-                                        ...COMMON_STYLES.card,
-                                        height: '100%',
-                                        animationDelay: `${index * 0.2}s`
-                                    }}
-                                >
-                                    <div style={{
-                                        height: '250px',
-                                        backgroundColor: COLORS.backgroundLight,
-                                        borderRadius: '12px 12px 0 0',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        position: 'relative',
-                                        overflow: 'hidden'
-                                    }}>
-                                        <div style={{
-                                            background: getCategoryColor(project.category),
-                                            width: '100%',
-                                            height: '100%',
-                                            opacity: 0.1,
-                                            position: 'absolute'
-                                        }} />
-                                        <i className="bi bi-folder-fill" style={{
-                                            fontSize: '4rem',
-                                            color: getCategoryColor(project.category),
-                                            zIndex: 1
-                                        }} />
-                                    </div>
-                                    
-                                    <div style={{ padding: '2rem' }}>
-                                        <div className="d-flex justify-content-between align-items-start mb-3">
-                                            <span style={{
-                                                backgroundColor: getCategoryColor(project.category),
-                                                color: COLORS.textWhite,
-                                                padding: '0.25rem 0.75rem',
-                                                borderRadius: '20px',
-                                                fontSize: TYPOGRAPHY.sizes.sm,
-                                                fontWeight: TYPOGRAPHY.fontWeights.medium
-                                            }}>
-                                                {project.category}
-                                            </span>
-                                            <span style={{
-                                                color: getStatusColor(project.status),
-                                                fontSize: TYPOGRAPHY.sizes.sm,
-                                                fontWeight: TYPOGRAPHY.fontWeights.medium
-                                            }}>
-                                                {project.status}
-                                            </span>
-                                        </div>
-                                        
-                                        <h3 style={{
-                                            fontSize: TYPOGRAPHY.sizes.xl,
-                                            fontWeight: TYPOGRAPHY.fontWeights.bold,
-                                            color: COLORS.textPrimary,
-                                            marginBottom: '1rem'
-                                        }}>
-                                            {project.title}
-                                        </h3>
-                                        
-                                        <p style={{
-                                            color: COLORS.textSecondary,
-                                            marginBottom: '1.5rem',
-                                            lineHeight: '1.6'
-                                        }}>
-                                            {project.longDescription}
-                                        </p>
-                                        
-                                        <div className="mb-3">
-                                            <div className="d-flex flex-wrap gap-2">
-                                                {project.technologies.map((tech, techIndex) => (
-                                                    <span 
-                                                        key={techIndex}
-                                                        style={{
-                                                            backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                                                            color: COLORS.primary,
-                                                            padding: '0.25rem 0.5rem',
-                                                            borderRadius: '6px',
-                                                            fontSize: TYPOGRAPHY.sizes.sm
-                                                        }}
-                                                    >
-                                                        {tech}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
-                                        
-                                        <div className="d-flex gap-3">
-                                            {project.githubUrl && (
-                                                <a 
-                                                    href={project.githubUrl}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    style={{
-                                                        ...COMMON_STYLES.secondaryButton,
-                                                        padding: '0.5rem 1rem',
-                                                        fontSize: TYPOGRAPHY.sizes.sm
-                                                    }}
-                                                >
-                                                    <i className="bi bi-github me-2" />
-                                                    Code
-                                                </a>
-                                            )}
-                                            {project.liveUrl && (
-                                                <a 
-                                                    href={project.liveUrl}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    style={{
-                                                        ...COMMON_STYLES.primaryButton,
-                                                        padding: '0.5rem 1rem',
-                                                        fontSize: TYPOGRAPHY.sizes.sm
-                                                    }}
-                                                >
-                                                    <i className="bi bi-box-arrow-up-right me-2" />
-                                                    Live Demo
-                                                </a>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </section>
@@ -393,7 +237,7 @@ const Projects: React.FC = () => {
                                             opacity: 0.1,
                                             position: 'absolute'
                                         }} />
-                                        <i className="bi bi-code-square" style={{
+                                        <i className={`bi ${getCategoryIcon(project.category)}`} style={{
                                             fontSize: '3rem',
                                             color: getCategoryColor(project.category),
                                             zIndex: 1
@@ -411,13 +255,6 @@ const Projects: React.FC = () => {
                                                 fontWeight: TYPOGRAPHY.fontWeights.medium
                                             }}>
                                                 {project.category}
-                                            </span>
-                                            <span style={{
-                                                color: getStatusColor(project.status),
-                                                fontSize: TYPOGRAPHY.sizes.xs,
-                                                fontWeight: TYPOGRAPHY.fontWeights.medium
-                                            }}>
-                                                {project.status}
                                             </span>
                                         </div>
                                         
@@ -440,10 +277,14 @@ const Projects: React.FC = () => {
                                         </p>
                                         
                                         <div className="d-flex justify-content-between align-items-center">
-                                            <span style={{
-                                                fontSize: TYPOGRAPHY.sizes.xs,
-                                                color: COLORS.textLight
-                                            }}>
+                                            <span 
+                                                style={{
+                                                    fontSize: TYPOGRAPHY.sizes.xs,
+                                                    color: COLORS.textLight,
+                                                    cursor: 'pointer'
+                                                }}
+                                                title={project.technologies.join(', ')}
+                                            >
                                                 {project.technologies.slice(0, 2).join(', ')}
                                                 {project.technologies.length > 2 && ` +${project.technologies.length - 2}`}
                                             </span>
